@@ -1,9 +1,35 @@
-RS Enterprises Android Project
-Package: com.rsenterprises.app
-Version: 1.0
-Minimum Android: 7.0 (API 24)
+name: Build RS Enterprises APK
 
-Open this folder in Android Studio and use Build > Generate Signed Bundle / APK > APK.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
-IMPORTANT:
-The supplied HTML contains web Firebase Phone OTP and PHP links (admin.php, customer_status.php, save_order.php). PHP does not run inside an offline APK. For production, host the website/backend on HTTPS or replace PHP backend with Firebase/another API.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build Debug APK
+        run: gradle assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: RS-Enterprises-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
