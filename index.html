@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS Enterprises | NDT Services</title>
+<meta name="description" content="RS Enterprises provides professional Non-Destructive Testing services including RT, UT, MT, PT and VT.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#172033;background:#f7f9fc;line-height:1.6}
+header{background:#0b1f3a;color:white;position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:800}.logo span{color:#3da9fc}
+nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}.otp-login-btn{background:#3da9fc!important;padding:8px 12px;border-radius:8px;font-weight:700}.otp-overlay{display:none;position:fixed;inset:0;background:#0009;z-index:100;align-items:center;justify-content:center;padding:20px}.otp-box{background:white;width:min(420px,100%);border-radius:14px;padding:24px;box-shadow:0 15px 50px #0005}.otp-box h2{text-align:left;margin-bottom:8px}.otp-box p{color:#667085;font-size:14px}.otp-box input{width:100%;padding:12px;margin-top:10px;border:1px solid #d9e1ea;border-radius:8px;font-size:16px}.otp-box button{width:100%;padding:12px;margin-top:12px;border:0;border-radius:8px;background:#3da9fc;color:white;font-weight:700;font-size:16px;cursor:pointer}.otp-box .secondary{background:#eef3f8;color:#172033}.otp-close{float:right;border:0;background:none!important;color:#172033!important;width:auto!important;padding:0!important;margin:0!important;font-size:26px!important}.otp-status{margin-top:10px;font-size:13px}.otp-user{display:none;color:white;margin-left:12px;font-size:14px;font-weight:700}
+.hero{background:linear-gradient(135deg,#0b1f3a,#164d7a);color:white;padding:80px 20px}
+.hero-inner{max-width:1100px;margin:auto}
+.hero h1{font-size:46px;line-height:1.1;margin-bottom:16px}
+.hero p{font-size:19px;max-width:650px;color:#e6eef7}
+.btn{display:inline-block;margin-top:25px;padding:13px 22px;background:#3da9fc;color:white;text-decoration:none;border-radius:7px;font-weight:bold}
+section{max-width:1100px;margin:auto;padding:65px 20px}
+h2{text-align:center;font-size:32px;margin-bottom:12px}.sub{text-align:center;color:#667085;margin-bottom:35px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.card{background:white;padding:25px;border-radius:12px;box-shadow:0 5px 20px #0000000b;border:1px solid #e8edf3}
+.card h3{margin-bottom:8px;color:#0b3b66}
+.about{background:white}
+.contact{background:#0b1f3a;color:white;max-width:none}
+.contact-inner{max-width:1100px;margin:auto;padding:65px 20px}
+.contact h2{color:white}.contact p{text-align:center;color:#d8e5f2}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:30px}
+.contact-box{padding:22px;border:1px solid #ffffff25;border-radius:10px}
+footer{background:#07162a;color:#aebed0;text-align:center;padding:20px;font-size:13px}
+@media(max-width:700px){.hero h1{font-size:36px}nav a{display:none}}
+.product-img{width:100%;height:210px;object-fit:contain;background:#f7f9fc;border-radius:10px;margin-bottom:16px}
+.price{font-size:22px;font-weight:800;color:#0b3b66;margin:10px 0}
+.cartbar{position:fixed;right:18px;bottom:18px;z-index:20;background:#3da9fc;color:white;padding:14px 18px;border-radius:999px;font-weight:800;box-shadow:0 8px 25px #0003;cursor:pointer}
+.qty{display:flex;align-items:center;gap:10px;margin:10px 0}.qty button{border:1px solid #d9e1ea;background:white;border-radius:6px;padding:5px 10px;cursor:pointer}.qty span{min-width:20px;text-align:center;font-weight:700}
+.cart-modal{display:none;position:fixed;inset:0;background:#0008;z-index:30;align-items:center;justify-content:center;padding:20px}.cart-box{background:white;width:min(520px,100%);max-height:85vh;overflow:auto;border-radius:14px;padding:22px}.cart-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #eee;padding:12px 0}.close{float:right;border:0;background:none;font-size:26px;cursor:pointer}
+
+.owner-login{padding:8px 12px;border-radius:8px;text-decoration:none} .owner-login:hover{opacity:.85}</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<div class="logo">RS <span>ENTERPRISES</span></div>
+<nav><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#products">Products</a><a href="#industries">Industries</a><a href="#contact">Contact</a><a href="admin.php" class="owner-login" style="font-weight:700;">🔐 Corporate Login</a><a href="customer_status.php" style="font-weight:700;">📦 Check Order Status</a><a href="javascript:void(0)" id="loginBtn" class="otp-login-btn" onclick="openOtpLogin()">🔐 Customer Login</a><span id="loggedUser" class="otp-user"></span></nav>
+</div>
+</header>
+
+<div id="home" class="hero">
+<div class="hero-inner">
+<h1>Professional NDT Inspection Services</h1>
+<p>Reliable Non-Destructive Testing solutions for industrial inspection, fabrication, pipelines and engineering projects.</p>
+<a class="btn" href="#contact">Get in Touch</a>
+</div>
+</div>
+
+<section id="about" class="about">
+<h2>About RS Enterprises</h2>
+<p class="sub">Quality • Safety • Reliability</p>
+<p>RS Enterprises provides Non-Destructive Testing (NDT) services focused on accurate inspection, safety and dependable reporting. We aim to support clients with professional inspection solutions for industrial and engineering applications.</p>
+</section>
+
+<section id="services">
+<h2>Our NDT Services</h2>
+<p class="sub">Inspection services can be customized according to project requirements.</p>
+<div class="cards">
+<div class="card"><h3>Radiographic Testing (RT)</h3><p>X-ray and gamma radiography for weld and component inspection.</p></div>
+<div class="card"><h3>Ultrasonic Testing (UT)</h3><p>Ultrasonic inspection for internal discontinuities and weld evaluation.</p></div>
+<div class="card"><h3>Magnetic Particle (MT)</h3><p>Surface and near-surface defect detection in suitable ferromagnetic materials.</p></div>
+<div class="card"><h3>Dye Penetrant (PT)</h3><p>Surface-breaking defect inspection for suitable non-porous materials.</p></div>
+<div class="card"><h3>Visual Testing (VT)</h3><p>Visual examination of welds, components and fabrication quality.</p></div>
+</div>
+</section>
+
+
+<section id="products">
+<h2>NDT Products</h2>
+<p class="sub">Quality NDT consumables, accessories and inspection products.</p>
+<div class="cards">
+<div class="card">
+<img class="product-img" src="photon-developer-9-liter.webp" alt="Photon X-Ray Developer 9 Liter">
+<h3>Photon X-Ray Developer</h3><p>9 Liter developer solution for X-Ray film processing.</p><div class="price">₹620</div>
+<div class="qty"><button onclick="changeQty(0,-1)">−</button><span id="q0">1</span><button onclick="changeQty(0,1)">+</button></div>
+<a class="btn" href="javascript:void(0)" onclick="addToCart(0)">🛒 Add to Cart</a>
+</div>
+<div class="card">
+<img class="product-img" src="photon-fixer-22-liter.jpg" alt="Photon X-Ray Fixer 22 Liter">
+<h3>Photon X-Ray Fixer</h3><p>22 Liter fixer with hardener for X-Ray and imaging film processing.</p><div class="price">₹950</div>
+<div class="qty"><button onclick="changeQty(1,-1)">−</button><span id="q1">1</span><button onclick="changeQty(1,1)">+</button></div>
+<a class="btn" href="javascript:void(0)" onclick="addToCart(1)">🛒 Add to Cart</a>
+</div>
+</div>
+</section>
+
+<section id="industries" class="about">
+<h2>Industries We Serve</h2>
+<p class="sub">NDT support for industrial inspection requirements.</p>
+<div class="cards">
+<div class="card"><h3>Oil & Gas</h3><p>Pipeline, fabrication and plant inspection support.</p></div>
+<div class="card"><h3>Fabrication</h3><p>Weld inspection and quality-control support.</p></div>
+<div class="card"><h3>Construction</h3><p>Inspection services for structural and engineering projects.</p></div>
+<div class="card"><h3>Industrial Plants</h3><p>NDT inspection support for plant maintenance and projects.</p></div>
+</div>
+</section>
+
+<div id="contact" class="contact">
+<div class="contact-inner">
+<h2>Contact RS Enterprises</h2>
+<p>For quotations, inspection requirements and project enquiries, contact us.</p>
+<div class="contact-grid">
+<div class="contact-box"><b>📞 Phone</b><br><a href="tel:+917084336093" style="color:inherit">+91 70843 36093</a></div>
+<div class="contact-box"><b>💬 WhatsApp</b><br><a href="https://wa.me/918097278387" style="color:inherit">+91 80972 78387</a></div>
+<div class="contact-box"><b>📧 Email</b><br><a href="mailto:rsenterprisesjaunpur@gmail.com" style="color:inherit">rsenterprisesjaunpur@gmail.com</a></div>
+<div class="contact-box"><b>📍 Location</b><br>Jaunpur, Uttar Pradesh, India</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="otp-overlay" id="otpOverlay"><div class="otp-box"><button class="otp-close" onclick="closeOtpLogin()">×</button><h2>Customer Login</h2><p id="otpIntro">Mobile number se OTP login karein.</p><input id="otpPhone" type="tel" inputmode="tel" placeholder="Mobile Number (+91XXXXXXXXXX)" maxlength="17"><div id="recaptcha-container" style="margin-top:12px"></div><button id="sendOtpBtn" onclick="sendLoginOtp()">Send OTP</button><input id="otpCode" type="tel" inputmode="numeric" placeholder="6 digit OTP" maxlength="6" style="display:none"><button id="verifyOtpBtn" onclick="verifyLoginOtp()" style="display:none">Verify OTP</button><button class="secondary" id="logoutBtn" onclick="logoutCustomer()" style="display:none">Logout</button><div class="otp-status" id="otpStatus"></div></div></div>
+<div class="cartbar" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</div>
+<div class="cart-modal" id="cartModal"><div class="cart-box"><button class="close" onclick="closeCart()">×</button><h2 style="text-align:left">Your Cart</h2><div id="cartItems"></div><h3 id="cartTotal" style="margin-top:18px"></h3><div id="checkoutForm" style="display:none;margin-top:18px;border-top:1px solid #eee;padding-top:18px"><label style="display:block;font-weight:700;margin-bottom:6px">Customer Details</label><input id="custName" placeholder="Customer Name" style="width:100%;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><input id="custPhone" placeholder="Mobile Number" type="tel" style="width:100%;margin-top:10px;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><input id="custAltPhone" placeholder="Alternate Mobile Number" type="tel" style="width:100%;margin-top:10px;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><input id="custEmail" placeholder="Email ID" type="email" style="width:100%;margin-top:10px;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><input id="custAddress1" placeholder="Address Line 1" style="width:100%;margin-top:10px;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><input id="custAddress2" placeholder="Address Line 2" style="width:100%;margin-top:10px;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><input id="custPin" placeholder="PIN Code" inputmode="numeric" maxlength="6" style="width:100%;margin-top:10px;padding:12px;border:1px solid #d9e1ea;border-radius:8px"><p style="font-size:13px;color:#667085;margin-top:8px">Delivery address aur contact details order bhejne se pehle fill karein.</p></div>
+<a class="btn" id="waOrder" target="_blank" style="display:none">Order on WhatsApp</a> <a class="btn" id="upiPay" style="display:none;background:#22a06b;margin-left:8px">Pay via UPI</a><button id="copyUpi" style="display:none;margin:10px 0 0;padding:10px 14px;border:1px solid #ddd;border-radius:7px;background:white;cursor:pointer">Copy UPI ID</button><p id="upiNote" style="display:none;margin-top:8px;font-size:13px;color:#667085">UPI ID: 7084336093@kotakbank</p></div></div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import { getAuth, RecaptchaVerifier, signInWithPhoneNumber, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+// Firebase project: RS Enterprises. SHA-1/SHA fingerprint is NOT used by this web OTP login.
+const firebaseConfig = {
+  apiKey: "AIzaSyAAjNr68IiAMaraAK34vKw3QmNNzAKpffY",
+  authDomain: "rs-enterprises-bdf70.firebaseapp.com",
+  projectId: "rs-enterprises-bdf70",
+  storageBucket: "rs-enterprises-bdf70.firebasestorage.app",
+  messagingSenderId: "611245300874"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+let confirmationResult = null;
+let recaptchaVerifier = null;
+
+window.openOtpLogin = function(){
+  document.getElementById('otpOverlay').style.display='flex';
+  document.getElementById('otpStatus').textContent='';
+  if(!recaptchaVerifier){
+    recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {size:'normal'});
+    recaptchaVerifier.render().catch(()=>{});
+  }
+};
+window.closeOtpLogin = function(){ document.getElementById('otpOverlay').style.display='none'; };
+window.sendLoginOtp = async function(){
+  const phone=document.getElementById('otpPhone').value.trim();
+  const status=document.getElementById('otpStatus');
+  if(!/^\+91[6-9]\d{9}$/.test(phone)){status.textContent='Mobile number +91 ke saath 10 digit mein likhein.';return;}
+  try{
+    status.textContent='OTP bheja ja raha hai...';
+    confirmationResult=await signInWithPhoneNumber(auth, phone, recaptchaVerifier);
+    document.getElementById('otpCode').style.display='block';
+    document.getElementById('verifyOtpBtn').style.display='block';
+    document.getElementById('sendOtpBtn').style.display='none';
+    status.textContent='OTP aapke mobile par bhej diya gaya hai.';
+  }catch(e){
+    status.textContent='OTP send nahi hua: '+(e.message||'Firebase error');
+    try{recaptchaVerifier.clear();}catch(_){}
+    recaptchaVerifier=null;
+  }
+};
+window.verifyLoginOtp = async function(){
+  const code=document.getElementById('otpCode').value.trim();
+  const status=document.getElementById('otpStatus');
+  if(!/^\d{6}$/.test(code)){status.textContent='6 digit OTP enter karein.';return;}
+  try{
+    await confirmationResult.confirm(code);
+    status.textContent='Login successful ✅';
+    setTimeout(closeOtpLogin,700);
+  }catch(e){status.textContent='OTP galat ya expire ho gaya.';}
+};
+window.logoutCustomer = async function(){await signOut(auth);};
+onAuthStateChanged(auth,(user)=>{
+  const btn=document.getElementById('loginBtn'), logged=document.getElementById('loggedUser'), logout=document.getElementById('logoutBtn');
+  if(user){btn.textContent='👤 Logged In';logged.textContent=user.phoneNumber||'';logged.style.display='inline';logout.style.display='block';document.getElementById('otpPhone').value=user.phoneNumber||'';}
+  else{btn.textContent='🔐 Customer Login';logged.textContent='';logged.style.display='none';logout.style.display='none';}
+});
+
+const products=[{name:'Photon X-Ray Developer - 9 Liter',price:620},{name:'Photon X-Ray Fixer - 22 Liter',price:950}];
+let cart=[];
+function changeQty(i,d){const e=document.getElementById('q'+i);let n=Math.max(1,(+e.textContent||1)+d);e.textContent=n}
+function addToCart(i){let q=+(document.getElementById('q'+i).textContent||1);let x=cart.find(a=>a.i===i);if(x)x.q+=q;else cart.push({i,q});renderCart();alert('Product cart me add ho gaya.')}
+function generateOrderId(){let d=new Date();let stamp=d.getFullYear().toString().slice(-2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');let rand=Math.floor(1000+Math.random()*9000);return 'RSE'+stamp+rand}\nfunction renderCart(){let count=cart.reduce((a,x)=>a+x.q,0);document.getElementById('cartCount').textContent=count;let box=document.getElementById('cartItems');let total=0;box.innerHTML='';cart.forEach(x=>{let p=products[x.i];total+=p.price*x.q;box.innerHTML+=`<div class="cart-item"><span>${p.name}<br>₹${p.price} × ${x.q}</span><b>₹${p.price*x.q}</b></div>`});document.getElementById('cartTotal').textContent='Total: ₹'+total;let wa=document.getElementById('waOrder'),upi=document.getElementById('upiPay'),copy=document.getElementById('copyUpi'),note=document.getElementById('upiNote'),form=document.getElementById('checkoutForm');if(cart.length){form.style.display='block';wa.style.display='inline-block';upi.style.display='inline-block';copy.style.display='inline-block';note.style.display='block';wa.onclick=function(e){let name=document.getElementById('custName').value.trim(),phone=document.getElementById('custPhone').value.trim(),alt=document.getElementById('custAltPhone').value.trim(),email=document.getElementById('custEmail').value.trim(),a1=document.getElementById('custAddress1').value.trim(),a2=document.getElementById('custAddress2').value.trim(),pin=document.getElementById('custPin').value.trim();let orderId=generateOrderId();if(!name||!phone||!a1||!pin){e.preventDefault();alert('Please Customer Name, Mobile Number, Address Line 1 aur PIN Code fill karein.');return}fetch('save_order.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({orderId,items:cart.map(x=>({name:products[x.i].name,price:products[x.i].price,quantity:x.q})),total,customer:{name,phone,altPhone:alt,email,address1:a1,address2:a2,pin},paymentStatus:'Pending'})}).catch(()=>{});let msg='Hello RS Enterprises, I want to order:%0AOrder ID: '+orderId+'%0A'+cart.map(x=>products[x.i].name+' × '+x.q+' = ₹'+(products[x.i].price*x.q)).join('%0A')+'%0A%0ATotal: ₹'+total+'%0A%0ACustomer Name: '+encodeURIComponent(name)+'%0AMobile: '+encodeURIComponent(phone)+'%0AAlternate Mobile: '+encodeURIComponent(alt)+'%0AEmail: '+encodeURIComponent(email)+'%0AAddress Line 1: '+encodeURIComponent(a1)+'%0AAddress Line 2: '+encodeURIComponent(a2)+'%0APIN Code: '+encodeURIComponent(pin);wa.href='https://wa.me/918097278387?text='+msg};upi.onclick=function(e){let name=document.getElementById('custName').value.trim(),phone=document.getElementById('custPhone').value.trim(),address=document.getElementById('custAddress1').value.trim(),orderId=generateOrderId();if(!name||!phone||!address){e.preventDefault();alert('Please Customer Name, Mobile Number aur Delivery Address fill karein.');return}upi.href='upi://pay?pa=7084336093@kotakbank&pn=RS%20Enterprises&am='+total+'&cu=INR&tn=RS%20Order%20'+encodeURIComponent(orderId)}}else{form.style.display='none';wa.style.display='none';upi.style.display='none';copy.style.display='none';note.style.display='none'}}
+document.getElementById('copyUpi').onclick=async()=>{try{await navigator.clipboard.writeText('7084336093@kotakbank');alert('UPI ID copied.')}catch(e){alert('UPI ID: 7084336093@kotakbank')}}
+function openCart(){renderCart();document.getElementById('cartModal').style.display='flex'}function closeCart(){document.getElementById('cartModal').style.display='none'}
+</script>
+<footer>© 2026 RS Enterprises. All Rights Reserved.</footer>
+</body>
+</html>
