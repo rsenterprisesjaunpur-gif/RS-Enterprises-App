@@ -1,11 +1,4 @@
-RS-Enterprises-App
-├── app
-│   ├── build.gradle
-│   └── src/main/
-│       ├── AndroidManifest.xml
-│       ├── java/
-│       └── res/
-├── build.gradle
-├── settings.gradle
-├── gradle.properties
-└── .github/workflows/build-apk.yml
+RS Enterprises Android APK Project
+Package: com.rsenterprises.app
+Version: 1.0
+Minimum Android: 7.0 (API 24)
