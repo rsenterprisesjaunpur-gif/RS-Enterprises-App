@@ -1,4 +1,34 @@
-RS Enterprises Android APK Project
-Package: com.rsenterprises.app
-Version: 1.0
-Minimum Android: 7.0 (API 24)
+name: Build RS Enterprises APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build Debug APK
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: RS-Enterprises-APK
+          path: app/build/outputs/apk/debug/app-debug.apk
